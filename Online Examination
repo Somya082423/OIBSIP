@@ -14,11 +14,10 @@ public class OnlineExamSystem {
 		this.password = password;
 		System.out.println("Sucessfully You are registered!  :)");
 		this.isLoggedIn = false;
-		this.timeRemaining = 10; // in minutes
+		this.timeRemaining = 10;
 		this.questionCount = 10;
 		this.userAnswers = new int[questionCount];
 		this.correctAnswers = new int[questionCount];
-		// initialize correct answers with random values (0 or 1)
 		for (int i = 0; i < questionCount; i++) {
 			correctAnswers[i] = (int) Math.round(Math.random());
 		}
@@ -65,7 +64,6 @@ public class OnlineExamSystem {
 		if (n == 1) {
 			submitExam();
 		} else {
-			// auto-submit exam when time is up
 			try {
 				Thread.sleep(timeRemaining * 10 * 1000);
 			} catch (InterruptedException e) {
